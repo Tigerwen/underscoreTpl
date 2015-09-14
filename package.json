@@ -1,0 +1,43 @@
+{
+  "name": "grunt-underscoreTpl-build",
+  "description": "The best Grunt plugin ever.",
+  "version": "0.0.0",
+  "homepage": "https://github.com/root/grunt-underscoreTpl-build",
+  "author": {
+    "name": "wenxiang.hu",
+    "email": "wenxiang.hu@qunar.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/root/grunt-underscoreTpl-build.git"
+  },
+  "bugs": {
+    "url": "https://github.com/root/grunt-underscoreTpl-build/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/root/grunt-underscoreTpl-build/blob/master/LICENSE-MIT"
+    }
+  ],
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.9.2",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "watch": "0.16.0",
+    "underscore": "^1.8.3",
+    "grunt": "~0.4.5"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "keywords": [
+    "gruntplugin"
+  ]
+}
