@@ -20,10 +20,10 @@ module.exports = function(grunt) {
         // Merge task-specific and/or target-specific options with these defaults.
         var options = this.options({
             extname: ['.tpl'],
-            folderName: 'tpl'
+            folderName: 'tpl',
+            destExt: '-tpl.js'
         });
-        var firstReg = new RegExp('(.*)\/'+options.folderName),
-            lastReg = new RegExp('/'+options.folderName+'\/(.*)'),
+        var reg = new RegExp('([^\/]*)\/'+options.folderName+'(\/([^\/]*))?'),
             fileTree,
             fileMap = {};
         this.files.forEach(function(f){
@@ -36,20 +36,21 @@ module.exports = function(grunt) {
                     var buildMap = build(fileTree),
                         dest = f.dest;
                     for(var item in buildMap){
-                        var matchs = item.match(firstReg),
-                            keyName = '',
-                            lastMatch = item.match(lastReg);
+                        var matchs = item.match(reg),
+                            keyName = '';
                         if(matchs){
-                            keyName = matchs[1];
+                            var footer = matchs[3],
+                                foldername = matchs[1],
+                                keyName = item.slice(0,matchs.index).replace(filepath,dest);
+                            if(footer){
+                                keyName += foldername+'/'+foldername+'-'+footer+options.destExt;
+                            }else{
+                                keyName += foldername+'/'+foldername+options.destExt;
+                            }
                         }else{
                             grunt.log.writeln(item+'写入异常');
                             return;
                         }
-                        if(lastMatch){
-                            keyName = keyName + '-' + lastMatch[1];
-                        }
-                        keyName += 'Tpl.js';
-                        keyName = keyName.replace(filepath,dest);
                         fileMap[item] = keyName;
                         grunt.file.write(keyName,buildMap[item]);
                         grunt.log.writeln('file  '+keyName+'  created.');

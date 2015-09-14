@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var s1 = 'test/app/av/tpl/inter',
+		s2 = 'test/app/av/tpl/domestic',
+		s3 = 'test/app/av/tpl',
+		keyWards = 'test',
+		keys = 'tpl',
+		dest = 'prd';
+
+	var reg = /([^\/]*)\/tpl(\/([^\/]*))?/;
+	var regX = new RegExp('([^\/]*)\/'+keys+'(\/([^\/]*))?');
+	console.log(s1.match(reg));
+	console.log(s2.match(reg));
+	console.log(s3.match(reg));
+</script>
+</body>
+</html>

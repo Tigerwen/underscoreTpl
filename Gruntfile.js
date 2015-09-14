@@ -1,6 +1,6 @@
 /*
  * grunt-underscoreTpl-build
- * https://github.com/root/grunt-underscoreTpl-build
+ * https://github.com/Tigerwen/underscoreTpl
  *
  * Copyright (c) 2015 wenxiang.hu
  * Licensed under the MIT license.
@@ -34,7 +34,7 @@ module.exports = function(grunt) {
         options: {
           extname: ['.tpl','.string']
         },
-        src: 'app',
+        src: 'test',
         dest: 'tmp'
       }
     },
