@@ -1,23 +1,23 @@
 {
-  "name": "grunt-underscoreTpl-build",
+  "name": "grunt-underscore-build",
   "description": "The best Grunt plugin ever.",
   "version": "0.0.0",
-  "homepage": "https://github.com/root/grunt-underscoreTpl-build",
+  "homepage": "https://github.com/Tigerwen/underscoreTpl",
   "author": {
     "name": "wenxiang.hu",
     "email": "wenxiang.hu@qunar.com"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/root/grunt-underscoreTpl-build.git"
+    "url": "git://github.com/Tigerwen/underscoreTpl.git"
   },
   "bugs": {
-    "url": "https://github.com/root/grunt-underscoreTpl-build/issues"
+    "url": "https://github.com/Tigerwen/underscoreTpl/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/root/grunt-underscoreTpl-build/blob/master/LICENSE-MIT"
+      "url": "https://github.com/Tigerwen/underscoreTpl/blob/master/LICENSE-MIT"
     }
   ],
   "engines": {
