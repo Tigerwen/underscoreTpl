@@ -14,7 +14,7 @@ npm install grunt-underscore-tpl --save-dev
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-underscoreTpl-build');
+grunt.loadNpmTasks('grunt-underscore-tpl');
 ```
 
 ## The "underscoreTpl_build" task
