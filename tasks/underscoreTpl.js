@@ -92,13 +92,15 @@ module.exports = function(grunt) {
             }
 
             function buildItem(fileObj){
-                var resultStr = '{';
+                var hasString = false,
+                    resultStr = '';
                 fileObj.fileList.forEach(function(item){
                     var extName = paths.extname(item);
                     if(options.extname.indexOf(extName) === -1){
                         grunt.log.writeln(item+'  未参与编译');
                         return;
                     }
+                    hasString = true;
                     var baseName = paths.basename(item,extName),
                         tmpStr = fs.readFileSync(item,'utf-8');
                     if(!!tmpStr){
@@ -110,10 +112,12 @@ module.exports = function(grunt) {
                         grunt.log.writeln(item+'  编译失败');
                     }
                 });
-                resultStr = resultStr.length > 1 ? resultStr.slice(0,-1) : resultStr;
-                resultStr += '}';
-                resultStr = ';(function(){var tpl ='+resultStr+';var _.tpl = _.__tpl || {};_.extend(_.__tpl,tpl);_.getTpls = function(id){if(_.__tpl[id]){return function(data){return _.__tpl[id].call(this,data,window._);}}};})(window);';
-                resultMap[fileObj.basePath] = resultStr;
+                if(hasString){
+                    resultStr = resultStr.length > 1 ? resultStr.slice(0,-1) : resultStr;
+                    resultStr = '{'+resultStr+'}';
+                    resultStr = ';(function(){var tpl ='+resultStr+';var _.tpl = _.__tpl || {};_.extend(_.__tpl,tpl);_.getTpls = function(id){if(_.__tpl[id]){return function(data){return _.__tpl[id].call(this,data,window._);}}};})(window);';
+                    resultMap[fileObj.basePath] = resultStr;
+                }
             }
         }
     });
