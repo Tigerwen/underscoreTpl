@@ -1,7 +1,7 @@
 {
   "name": "grunt-underscore-tpl",
   "description": "build underscore string",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "homepage": "https://github.com/Tigerwen/underscoreTpl",
   "author": {
     "name": "wenxiang.hu",
