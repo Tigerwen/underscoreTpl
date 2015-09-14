@@ -1,5 +1,5 @@
 {
-  "name": "grunt-underscore-build",
+  "name": "grunt-underscore-tpl",
   "description": "The best Grunt plugin ever.",
   "version": "0.0.0",
   "homepage": "https://github.com/Tigerwen/underscoreTpl",
@@ -30,7 +30,6 @@
     "grunt-contrib-jshint": "^0.9.2",
     "grunt-contrib-clean": "^0.5.0",
     "grunt-contrib-nodeunit": "^0.3.3",
-    "watch": "0.16.0",
     "underscore": "^1.8.3",
     "grunt": "~0.4.5"
   },

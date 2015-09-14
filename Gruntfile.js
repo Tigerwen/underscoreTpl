@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     },
 
     // Configuration to be run (and then tested).
-    underscoreTpl_build: {
+    underscoreTpl: {
       dev: {
         options: {
           extname: ['.tpl','.string']
@@ -60,5 +60,5 @@ module.exports = function(grunt) {
 
   // By default, lint and run all tests.
   grunt.registerTask('default', ['jshint', 'test']);
-  grunt.registerTask('build', ['clean', 'underscoreTpl_build']);
+  grunt.registerTask('build', ['clean', 'underscoreTpl']);
 };
