@@ -28,26 +28,36 @@ grunt.initConfig({
     options: {
       // Task-specific options go here.
     },
-    your_target: {
-      // Target-specific file lists and/or options go here.
-    },
+    dev: {
+      options: {
+        extname: ['.tpl','.string']
+      },
+      src: 'test',
+      dest: 'tmp'
+    }
   },
 });
 ```
 
 ### Options
 
-#### options.separator
+#### options.extname
+Type: `Array`
+Default value: `'.tpl'`
+参与编译文件的后缀名
+
+
+#### options.folderName
 Type: `String`
-Default value: `',  '`
+Default value: `'tpl'`
+参与编译文件夹的文件夹名称 统一
 
-A string value that is used to do something with whatever.
 
-#### options.punctuation
+#### options.destExt
 Type: `String`
-Default value: `'.'`
+Default value: `'-tpl.js'`
+生成产物的拼接后缀名
 
-A string value that is used to do something else with whatever else.
 
 ### Usage Examples
 
@@ -58,8 +68,12 @@ In this example, the default options are used to do something with whatever. So 
 grunt.initConfig({
   underscoreTpl_build: {
     options: {},
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
+    dev: {
+      options: {
+        extname: ['.tpl','.string']
+      },
+      src: 'test',
+      dest: 'tmp'
     },
   },
 });
@@ -71,13 +85,13 @@ In this example, custom options are used to do something else with whatever else
 ```js
 grunt.initConfig({
   underscoreTpl_build: {
-    options: {
-      separator: ': ',
-      punctuation: ' !!!',
-    },
-    files: {
-      'dest/default_options': ['src/testing', 'src/123'],
-    },
+    dev: {
+      options: {
+        extname: ['.tpl','.string']
+      },
+      src: 'test',
+      dest: 'tmp'
+    }
   },
 });
 ```
